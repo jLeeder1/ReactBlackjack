@@ -4,13 +4,17 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
+import { GenerateDeck } from './Scripts/DeckGeneration/DeckGenerator';
 
 import './custom.css'
 
 export default class App extends Component {
   static displayName = App.name;
 
-  render () {
+   
+
+    render() {
+        console.log(GenerateDeck());
     return (
       <Layout>
         <Route exact path='/' component={Home} />
