@@ -9,13 +9,24 @@ export default function RunGame() {
     let deck = GenerateDeck();
     console.log(deck);
 
-    // Pick a random card from the deck
-    let randomCard = GetRandomCard(deck);
-    console.log(randomCard);
+    let actors = SetUpActors();
 
-    console.log(deck);
+    actors.forEach(actor => actor.cards.push(GetRandomCard(deck, 2)));
+
+    console.log(actors);
 }
 
-function SetUpGame() {
+function SetUpActors() {
 
+    let player = {
+        cards: [],
+        isPlayer: true
+    };
+
+    let dealer = {
+        cards: [],
+        isPlayer: false
+    };
+
+    return [player, dealer];
 }
